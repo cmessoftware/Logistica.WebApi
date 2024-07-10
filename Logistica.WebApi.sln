@@ -1,0 +1,58 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{2036939D-ED32-4549-9CEC-F40C2C8CB7AB}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Logistica.WebApi.Api", "Logistica.WebApi\src\Presentation\Logistica.WebApi.Api.csproj", "{F61C8E0C-F116-45D8-803A-2A6FCD3AF8AC}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Logistica.WebApi.Application", "Logistica.WebApi\src\Application\Logistica.WebApi.Application.csproj", "{1A6C8743-6F06-4879-9406-65684DF8D53B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Logistica.WebApi.Domain", "Logistica.WebApi\src\Domain\Logistica.WebApi.Domain.csproj", "{9A501453-D243-4658-9FA0-A73B2FF47C2A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Logistica.WebApi.Infrastructure", "Logistica.WebApi\src\Infrastructure\Logistica.WebApi.Infrastructure.csproj", "{5B2E3896-9091-4092-B29D-6BF52EF7B3FC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Logistica.Web", "Logistica.WebApi\src\Web\Logistica.Web\Logistica.Web.csproj", "{368DACD6-B5A7-42E4-812D-E4571D7B2B02}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F61C8E0C-F116-45D8-803A-2A6FCD3AF8AC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F61C8E0C-F116-45D8-803A-2A6FCD3AF8AC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F61C8E0C-F116-45D8-803A-2A6FCD3AF8AC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F61C8E0C-F116-45D8-803A-2A6FCD3AF8AC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1A6C8743-6F06-4879-9406-65684DF8D53B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1A6C8743-6F06-4879-9406-65684DF8D53B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1A6C8743-6F06-4879-9406-65684DF8D53B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1A6C8743-6F06-4879-9406-65684DF8D53B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9A501453-D243-4658-9FA0-A73B2FF47C2A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9A501453-D243-4658-9FA0-A73B2FF47C2A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9A501453-D243-4658-9FA0-A73B2FF47C2A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9A501453-D243-4658-9FA0-A73B2FF47C2A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5B2E3896-9091-4092-B29D-6BF52EF7B3FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5B2E3896-9091-4092-B29D-6BF52EF7B3FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5B2E3896-9091-4092-B29D-6BF52EF7B3FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5B2E3896-9091-4092-B29D-6BF52EF7B3FC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{368DACD6-B5A7-42E4-812D-E4571D7B2B02}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{368DACD6-B5A7-42E4-812D-E4571D7B2B02}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{368DACD6-B5A7-42E4-812D-E4571D7B2B02}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{368DACD6-B5A7-42E4-812D-E4571D7B2B02}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{F61C8E0C-F116-45D8-803A-2A6FCD3AF8AC} = {2036939D-ED32-4549-9CEC-F40C2C8CB7AB}
+		{1A6C8743-6F06-4879-9406-65684DF8D53B} = {2036939D-ED32-4549-9CEC-F40C2C8CB7AB}
+		{9A501453-D243-4658-9FA0-A73B2FF47C2A} = {2036939D-ED32-4549-9CEC-F40C2C8CB7AB}
+		{5B2E3896-9091-4092-B29D-6BF52EF7B3FC} = {2036939D-ED32-4549-9CEC-F40C2C8CB7AB}
+		{368DACD6-B5A7-42E4-812D-E4571D7B2B02} = {2036939D-ED32-4549-9CEC-F40C2C8CB7AB}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A3CDFD4A-4423-435B-9828-06D43441659C}
+	EndGlobalSection
+EndGlobal
