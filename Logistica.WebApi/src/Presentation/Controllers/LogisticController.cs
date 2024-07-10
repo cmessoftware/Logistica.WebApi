@@ -6,6 +6,7 @@ using Logistica.WebApi.Infrastructure.Data;
 using Logistica.WebApi.Infrastructure.Entities;
 using AutoMapper;
 using Microsoft.EntityFrameworkCore;
+using Logistica.WebApi.Api.Helpers;
 
 namespace Logistica.WebApi.Api.Controllers;
 
@@ -26,14 +27,60 @@ public class LogisticController : ControllerBase
         _mapper = mapper;
     }
 
+    /// <summary>
+    /// 1) A partir de un origen y una serie de destinos: Retornar el recorrido más corto posible
+    /// que pase por todas las ciudades, no se repita ningún destino y se retorne al origen.
+    /// </summary>
+    /// <param name="nodes"></param>
+    /// <returns></returns>
+
     [HttpPost("shorter")]
-    public async Task<ActionResult<Result<List<RouteResponseDto>>>> GetShorter(
+    public async Task<ActionResult<Result<RouteNodeShorterResponseDto>>> GetShorter(
         [FromBody] RouteNodeShorterRequestDto nodes)
     {
-       
+      
+        int n = _context.RouteNodes.Count();
+
+        int[,] distanceMatrix = new int[n,n] ;
+
+        var routes = _context.RouteNodes.Select(x => x).ToArray();
+        var routes2 =  routes.Clone() as RouteNode[];
 
 
-        return Ok();
+        foreach (var route in routes)
+        {
+            distanceMatrix[route.Id-1, route.Id-1] = 0;
+
+            foreach (var route2 in routes2)
+            {
+                distanceMatrix[route.Id - 1, route2.Id-1] = route.Distance;
+                distanceMatrix[route2.Id-1, route.Id-1] = route.Distance;
+            }
+        }
+
+        int[] cities = _context.RouteNodes.Where(x => nodes.DestinationNodes.Contains(x.Name)).Select(x => x.Id).ToArray();
+
+        int[] bestRoute = null;
+        int minDistance = int.MaxValue;
+
+        foreach (var route in ShorterDistancesHelpers.GetPermutations(cities))
+        {
+            int currentDistance = ShorterDistancesHelpers.CalculateTotalDistance(route, distanceMatrix);
+            if (currentDistance < minDistance)
+            {
+                minDistance = currentDistance;
+                bestRoute = (int[])route.Clone();
+            }
+        }
+
+        var response = new RouteNodeShorterResponseDto()
+        {
+            MinDistance = minDistance,
+            RouteNodes = _mapper.Map<List<RouteNodeResponseDto>>(bestRoute.Select(x => _context.RouteNodes.Find(x)).ToList())
+        };
+
+
+        return Ok(response);
        
     }
     /// <summary>
